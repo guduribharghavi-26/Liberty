@@ -1,29 +1,8 @@
-import bcrypt from "bcryptjs"
-import jwt from "jsonwebtoken"
+"use server"
+
 import { getDatabase, type User } from "./mongodb"
 import { ObjectId } from "mongodb"
-
-const JWT_SECRET = process.env.JWT_SECRET || "your-jwt-secret-here"
-
-export async function hashPassword(password: string): Promise<string> {
-  return bcrypt.hash(password, 12)
-}
-
-export async function verifyPassword(password: string, hashedPassword: string): Promise<boolean> {
-  return bcrypt.compare(password, hashedPassword)
-}
-
-export function generateToken(userId: string): string {
-  return jwt.sign({ userId }, JWT_SECRET, { expiresIn: "7d" })
-}
-
-export function verifyToken(token: string): { userId: string } | null {
-  try {
-    return jwt.verify(token, JWT_SECRET) as { userId: string }
-  } catch {
-    return null
-  }
-}
+import { hashPassword, verifyPassword, generateToken, verifyToken } from "./auth-utils"
 
 export async function createUser(userData: {
   email: string
@@ -106,7 +85,7 @@ export async function getUserById(userId: string): Promise<User | null> {
   const db = await getDatabase()
 
   try {
-    const user = await db.collection<User>("users").findOne({ _id: new ObjectId(userId) })
+    const user = await db.collection<User>("users").findOne({ _id: userId })
     return user
   } catch {
     return null

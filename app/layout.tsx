@@ -21,6 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* ✅ Favicon for browser tab */}
+        <link rel="icon" href="/liberty-logo.png" type="image/png" />
+      </head>
       <body className={inter.className}>
         <AuthProvider>
           {children}
