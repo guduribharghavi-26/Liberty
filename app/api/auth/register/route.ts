@@ -1,6 +1,9 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { createUser, generateToken } from "@/lib/auth"
+import { createUser } from "@/lib/auth"
+import { generateToken } from "@/lib/auth-utils"
 import { z } from "zod"
+
+export const runtime = "nodejs"
 
 const registerSchema = z.object({
   email: z.string().email(),

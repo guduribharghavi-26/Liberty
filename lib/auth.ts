@@ -1,5 +1,3 @@
-"use server"
-
 import { getDatabase, type User } from "./mongodb"
 import { ObjectId } from "mongodb"
 import { hashPassword, verifyPassword, generateToken, verifyToken } from "./auth-utils"

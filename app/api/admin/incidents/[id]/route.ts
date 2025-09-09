@@ -1,7 +1,10 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { verifyToken, getUserById } from "@/lib/auth"
+import { verifyToken } from "@/lib/auth-utils"
+import { getUserById } from "@/lib/auth"
 import { getDatabase } from "@/lib/mongodb"
 import { ObjectId } from "mongodb"
+
+export const runtime = "nodejs"
 
 export async function PATCH(request: NextRequest, { params }: { params: { id: string } }) {
   try {

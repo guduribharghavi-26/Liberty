@@ -1,6 +1,9 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { createUser, generateToken } from "@/lib/auth"
+import { createUser } from "@/lib/auth"
+import { generateToken } from "@/lib/auth-utils"
 import { z } from "zod"
+
+export const runtime = "nodejs"
 
 // Admin secret key - In production, this should be in environment variables
 const ADMIN_SECRET_KEY = process.env.ADMIN_SECRET_KEY || "LIBERTY_ADMIN_2024_SECURE_KEY"

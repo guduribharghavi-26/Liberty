@@ -1,7 +1,10 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { verifyToken, getUserById } from "@/lib/auth"
+import { verifyToken } from "@/lib/auth-utils"
+import { getUserById } from "@/lib/auth"
 import { getDatabase, type ChatRoom, type Message } from "@/lib/mongodb"
 import { z } from "zod"
+
+export const runtime = "nodejs"
 
 const createChatRoomSchema = z.object({
   police_station_id: z.string(),

@@ -81,8 +81,9 @@ export function Footer() {
         </div>
 
         <div className="border-t border-orange-700 mt-12 pt-8 text-center">
-          <p className="text-orange-200">© 2024 Liberty - Safety is not a privilege. It's a right.</p>
+          <p className="text-orange-200">© 2025 Liberty - Safety is not a privilege. It's a right.</p>
           <p className="text-orange-300 text-sm mt-2">Empowering women's safety across India, 24/7.</p>
+          <p className="text-orange-300 text-sm mt-2">Made by Nagasri Bharghavi</p>
         </div>
       </div>
     </footer>

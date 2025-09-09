@@ -1,6 +1,9 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { authenticateUser, generateToken } from "@/lib/auth"
+import { authenticateUser } from "@/lib/auth"
+import { generateToken } from "@/lib/auth-utils"
 import { z } from "zod"
+
+export const runtime = "nodejs"
 
 const loginSchema = z.object({
   email: z.string().email(),

@@ -1,8 +1,11 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { verifyToken, getUserById } from "@/lib/auth"
+import { verifyToken } from "@/lib/auth-utils"
+import { getUserById } from "@/lib/auth"
 import { getDatabase, type Incident } from "@/lib/mongodb"
 import { generateCaseNumber } from "@/lib/utils/case-number"
 import { z } from "zod"
+
+export const runtime = "nodejs"
 
 const createIncidentSchema = z.object({
   title: z.string().min(1).max(255),

@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server"
 import { getDatabase, type PoliceStation } from "@/lib/mongodb"
 
+export const runtime = "nodejs"
+
 export async function GET() {
   try {
     const db = await getDatabase()
