@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "tw-animate-css";
+
+:root {
+  --background: oklch(0.98 0.01 60);
+  --foreground: oklch(0.15 0.02 20);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.02 20);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.02 20);
+  --primary: oklch(0.45 0.15 25);
+  --primary-foreground: oklch(0.98 0.01 60);
+  --secondary: oklch(0.95 0.02 60);
+  --secondary-foreground: oklch(0.45 0.15 25);
+  --muted: oklch(0.96 0.02 60);
+  --muted-foreground: oklch(0.55 0.05 25);
+  --accent: oklch(0.25 0.08 240);
+  --accent-foreground: oklch(0.98 0.01 60);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.98 0.01 60);
+  --border: oklch(0.9 0.02 60);
+  --input: oklch(0.95 0.02 60);
+  --ring: oklch(0.45 0.15 25);
+  --chart-1: oklch(0.45 0.15 25);
+  --chart-2: oklch(0.25 0.08 240);
+  --chart-3: oklch(0.6 0.18 30);
+  --chart-4: oklch(0.7 0.2 45);
+  --chart-5: oklch(0.5 0.12 300);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.98 0.01 60);
+  --sidebar-foreground: oklch(0.15 0.02 20);
+  --sidebar-primary: oklch(0.45 0.15 25);
+  --sidebar-primary-foreground: oklch(0.98 0.01 60);
+  --sidebar-accent: oklch(0.95 0.02 60);
+  --sidebar-accent-foreground: oklch(0.45 0.15 25);
+  --sidebar-border: oklch(0.9 0.02 60);
+  --sidebar-ring: oklch(0.45 0.15 25);
+}
+
+.dark {
+  --background: oklch(0.08 0.02 20);
+  --foreground: oklch(0.95 0.02 60);
+  --card: oklch(0.12 0.02 20);
+  --card-foreground: oklch(0.95 0.02 60);
+  --popover: oklch(0.12 0.02 20);
+  --popover-foreground: oklch(0.95 0.02 60);
+  --primary: oklch(0.65 0.18 30);
+  --primary-foreground: oklch(0.08 0.02 20);
+  --secondary: oklch(0.18 0.02 20);
+  --secondary-foreground: oklch(0.95 0.02 60);
+  --muted: oklch(0.18 0.02 20);
+  --muted-foreground: oklch(0.65 0.05 25);
+  --accent: oklch(0.4 0.08 240);
+  --accent-foreground: oklch(0.95 0.02 60);
+  --destructive: oklch(0.6 0.2 25);
+  --destructive-foreground: oklch(0.95 0.02 60);
+  --border: oklch(0.18 0.02 20);
+  --input: oklch(0.18 0.02 20);
+  --ring: oklch(0.65 0.18 30);
+  --chart-1: oklch(0.65 0.18 30);
+  --chart-2: oklch(0.4 0.08 240);
+  --chart-3: oklch(0.7 0.2 35);
+  --chart-4: oklch(0.75 0.22 45);
+  --chart-5: oklch(0.6 0.12 300);
+  --sidebar: oklch(0.12 0.02 20);
+  --sidebar-foreground: oklch(0.95 0.02 60);
+  --sidebar-primary: oklch(0.65 0.18 30);
+  --sidebar-primary-foreground: oklch(0.08 0.02 20);
+  --sidebar-accent: oklch(0.18 0.02 20);
+  --sidebar-accent-foreground: oklch(0.95 0.02 60);
+  --sidebar-border: oklch(0.18 0.02 20);
+  --sidebar-ring: oklch(0.65 0.18 30);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ---- Custom styles ---- */
+.saffron-gradient {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ff4500 100%);
+}
+
+.patriot-gradient {
+  background: linear-gradient(135deg, #ff6b35 0%, #1e3a8a 100%);
+}
+
+.liberty-gradient {
+  background: linear-gradient(135deg, #ff4500 0%, #ff6b35 50%, #ffa500 100%);
+}
+
+.safety-gradient {
+  background: linear-gradient(135deg, #8b0000 0%, #dc143c 50%, #ff4500 100%);
+}
+
+.indian-gradient {
+  background: linear-gradient(135deg, #ff9933 0%, #ffffff 50%, #138808 100%);
+}
+
+.professional-shadow {
+  box-shadow: 0 4px 6px -1px rgba(255, 107, 53, 0.1),
+              0 2px 4px -1px rgba(255, 107, 53, 0.06);
+}
+
+.saffron-border {
+  border: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 80px;
+  }
+}
+
+.focus-saffron:focus {
+  outline: 2px solid #ff6b35;
+  outline-offset: 2px;
+}
+
+.liberty-card {
+  background: linear-gradient(145deg, #ffffff 0%, #fff8f0 100%);
+  border: 1px solid #ffd4a3;
+  box-shadow: 0 1px 3px 0 rgba(255, 107, 53, 0.1),
+              0 1px 2px 0 rgba(255, 107, 53, 0.06);
+}
+
+.liberty-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(255, 107, 53, 0.1),
+              0 2px 4px -1px rgba(255, 107, 53, 0.06);
+  transform: translateY(-1px);
+  transition: all 0.2s ease-in-out;
+}
+
+.tricolor-border {
+  border-left: 4px solid #ff9933;
+  border-right: 4px solid #138808;
+}
+
+.ashoka-wheel {
+  color: #000080;
+}
